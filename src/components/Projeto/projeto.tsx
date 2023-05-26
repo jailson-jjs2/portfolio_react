@@ -1,13 +1,21 @@
-import Paragrafo from '../Paragrafo/paragrafo'
-import { Titulo } from '../Titulo/styles'
-
+import React from 'react'
 import { Card, LinkBotao } from './styles'
+import Titulo from '../Titulo/titulo'
+import Paragrafo from '../Paragrafo/paragrafo'
 
-const Projeto = () => (
+interface ProjetoProps {
+  name: string
+  language: string
+  html_url: string
+}
+
+const Projeto: React.FC<ProjetoProps> = ({ name, language, html_url }) => (
   <Card>
-    <Titulo>Projeto Lista de Tarefas</Titulo>
-    <Paragrafo tipo="secundario"> Lista de tarefas feita com VueJS</Paragrafo>
-    <LinkBotao>Visualisar</LinkBotao>
+    <Titulo>{name}</Titulo>
+    <Paragrafo>{language}</Paragrafo>
+    <LinkBotao href={html_url} target="_blank" rel="noopener noreferrer">
+      Visualizar
+    </LinkBotao>
   </Card>
 )
 
