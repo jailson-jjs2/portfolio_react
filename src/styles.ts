@@ -11,6 +11,7 @@ const EstiloGlobal = createGlobalStyle`
   body {
     padding-top: 80px;
     padding-bottom: 80px;
+    background-color: ${(props) => props.theme.corDefundo};
 
     @media (max-width: 768px) {
       padding-top: 16px;
@@ -29,7 +30,7 @@ export const Container = styled.div`
   column-gap: 56px;
 
   @media (max-width: 768px) {
-    max-width: 80%;
+    max-width: 90%;
     display: block;
   }
 `

@@ -1,10 +1,15 @@
+import { type } from 'os'
 import Avatar from '../../components/Avatar/avatar'
 import Paragrafo from '../../components/Paragrafo/paragrafo'
 import Titulo from '../../components/Titulo/titulo'
 
 import { Descricao, BotaoTema, SidebarContainer } from './styles'
 
-const Sidebar = () => (
+type Props = {
+  trocaTema: () => void
+}
+
+const Sidebar = (props: Props) => (
   <aside>
     {/* POR TRATAR <Titulo> ESSA tag COMO children  Ñ COMO PROPRIEDADE COM QUALQUER OUTRO NOME, EX: ABAIXO "valor" */}
     {/* <Titulo valor="Jailson Joventino"></Titulo> */}
@@ -20,7 +25,7 @@ const Sidebar = () => (
       <Descricao tipo="principal" fontSize={12}>
         DEV Full Stack
       </Descricao>
-      <BotaoTema>Tema Light/Dark</BotaoTema>
+      <BotaoTema onClick={props.trocaTema}>Tema Light/Dark</BotaoTema>
     </SidebarContainer>
   </aside>
 )
